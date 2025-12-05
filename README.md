@@ -1,252 +1,153 @@
-# Midterm Machine Learning 2025 - End-to-End ML Pipeline
+# Midterm Machine Learning 2025
 
-## 📋 Student Information
-- **Name**: [Your Full Name]
-- **NIM**: [Your Student ID]
-- **Class**: [Your Class]
-
----
-
-## 🎯 Project Overview
-This repository contains comprehensive end-to-end Machine Learning implementations for the Midterm examination. The project demonstrates practical knowledge in data preprocessing, model development, training, evaluation, and comparison across multiple ML algorithms using a real-world **Transaction Fraud Detection Dataset**.
-
-The project covers three major ML approaches:
-1. **Classification** - Fraud Detection System
-2. **Regression** - Transaction Amount Prediction
-3. **Clustering** - Customer Segmentation Analysis
+## 📋 Identitas Mahasiswa
+- **Nama**: Muhammad Rafi A Syifaa Nugraha
+- **Kelas**: TK-46-04
 
 ---
 
-## 📊 Dataset Description
-**Transaction Fraud Detection Dataset**
-- **Source**: Credit card transaction data
-- **Target Variable**: `isFraud` (Binary: 0 = Legitimate, 1 = Fraud)
-- **Features**: 
-  - Transaction details (TransactionDT, TransactionAmt, ProductCD)
-  - Card information (card1-card6)
-  - Address information (addr1, addr2)
-  - Distance metrics (dist1, dist2)
-  - Email domains (P_emaildomain, R_emaildomain)
-  - Categorical features (C1-C14)
-  - Time-based features (D1-D15)
-  - Match features (M1-M9)
-  - Versioned features (V1-V339)
+## 🎯 Deskripsi Project
+Repository ini berisi implementasi end-to-end Machine Learning untuk UTS (Midterm) yang mencakup tiga pendekatan utama: **Classification**, **Regression**, dan **Clustering** menggunakan berbagai dataset.
 
 ---
 
-## 🚀 Models Implemented
-
-### 1. Classification Models (Fraud Detection)
-Located in: `midterm_transaction_data.ipynb`
-
-| Model | Description | Key Metrics |
-|-------|-------------|-------------|
-| **Logistic Regression** | Linear model for binary classification | Accuracy, Precision, Recall, F1-Score, ROC-AUC |
-| **Random Forest Classifier** | Ensemble of decision trees | Feature importance, Accuracy, ROC-AUC |
-| **XGBoost Classifier** | Gradient boosting algorithm | Precision-Recall curve, ROC-AUC |
-| **Neural Network (MLP)** | Multi-layer perceptron | Loss curves, Accuracy, F1-Score |
-
-**Evaluation Metrics**:
-- Accuracy
-- Precision, Recall, F1-Score
-- ROC-AUC Score
-- Confusion Matrix
-- Classification Report
-- Feature Importance Analysis
-
----
-
-### 2. Regression Models (Transaction Amount Prediction)
-Located in: `midterm_regresi.ipynb`
-
-| Model | Description | Key Metrics |
-|-------|-------------|-------------|
-| **Linear Regression** | Basic linear relationship modeling | R² Score, MSE, MAE |
-| **Ridge Regression** | L2 regularization | R² Score, RMSE |
-| **Lasso Regression** | L1 regularization with feature selection | R² Score, MAE |
-| **Random Forest Regressor** | Ensemble regression trees | R² Score, Feature importance |
-| **Gradient Boosting Regressor** | Advanced boosting technique | R² Score, RMSE, MAE |
-
-**Evaluation Metrics**:
-- R² Score (Coefficient of Determination)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- Mean Absolute Error (MAE)
-- Residual plots
-- Prediction vs Actual plots
-
----
-
-### 3. Clustering Models (Customer Segmentation)
-Located in: `midterm_clustering.ipynb`
-
-| Model | Description | Key Analysis |
-|-------|-------------|--------------|
-| **K-Means Clustering** | Partition-based clustering | Elbow method, Silhouette score |
-| **DBSCAN** | Density-based clustering | Noise detection, Cluster shapes |
-| **Hierarchical Clustering** | Agglomerative clustering | Dendrogram analysis |
-
-**Evaluation Metrics**:
-- Silhouette Score
-- Calinski-Harabasz Score
-- Davies-Bouldin Score
-- Cluster visualization (PCA/t-SNE)
-- Cluster profiling
-
----
-
-## 📁 Repository Structure
+## 📁 Struktur Repository
 ```
 Midterm-Machine-Learning-2025/
 │
-├── README.md                              # Project documentation
-├── midterm_transaction_data.ipynb         # Classification: Fraud Detection
-├── midterm_regresi.ipynb                  # Regression: Amount Prediction
-├── midterm_clustering.ipynb               # Clustering: Customer Segmentation
+├── README.md                              # Dokumentasi project
+├── .gitignore                             # Git ignore file
+│
+├── midterm_transaction_data.ipynb         # Classification - Fraud Detection
+├── midterm_regresi.ipynb                  # Regression - Prediction
+├── midterm_clustering.ipynb               # Clustering - Segmentation
 │
 ├── datasets/
-│   └── transaction/
-│       ├── train_transaction.csv          # Training dataset
-│       └── test_transaction.csv           # Test dataset
+│   ├── transaction/
+│   │   ├── train_transaction.csv          # Dataset training fraud detection
+│   │   └── test_transaction.csv           # Dataset testing fraud detection
+│   ├── regresi/
+│   │   └── midterm-regresi-dataset.csv    # Dataset untuk regression
+│   └── clustering/
+│       └── clusteringmidterm.csv          # Dataset untuk clustering
 │
-├── models/                                # Saved trained models (generated)
-└── midterm_folder/                        # Additional resources
+├── models/                                # Folder untuk menyimpan trained models
+└── midterm_folder/                        # Folder tambahan
 ```
 
 ---
 
-## 🛠️ Installation & Setup
+## 📊 Dataset yang Digunakan
 
-### Prerequisites
-- Python 3.8+
-- Jupyter Notebook or JupyterLab
+### 1. Transaction Dataset (Classification)
+- **File**: `train_transaction.csv`, `test_transaction.csv`
+- **Tujuan**: Deteksi fraud pada transaksi
+- **Target**: `isFraud` (Binary classification)
 
-### Required Libraries
+### 2. Regression Dataset
+- **File**: `midterm-regresi-dataset.csv`
+- **Tujuan**: Prediksi nilai numerik
+
+### 3. Clustering Dataset
+- **File**: `clusteringmidterm.csv`
+- **Tujuan**: Segmentasi data/customer
+
+---
+
+## 🚀 Model yang Diimplementasikan
+
+### 1. Classification (`midterm_transaction_data.ipynb`)
+| Model | Metrics |
+|-------|---------|
+| Logistic Regression | Accuracy, Precision, Recall, F1-Score, ROC-AUC |
+| Random Forest | Feature Importance, Accuracy, ROC-AUC |
+| XGBoost | Precision-Recall, ROC-AUC |
+| Neural Network (Deep Learning) | Loss curves, Accuracy, Confusion Matrix |
+
+### 2. Regression (`midterm_regresi.ipynb`)
+| Model | Metrics |
+|-------|---------|
+| Linear Regression | R², MSE, MAE |
+| Ridge Regression | R², RMSE |
+| Lasso Regression | R², MAE |
+| Random Forest Regressor | R², Feature Importance |
+| Gradient Boosting | R², RMSE, MAE |
+
+### 3. Clustering (`midterm_clustering.ipynb`)
+| Model | Metrics |
+|-------|---------|
+| K-Means | Elbow Method, Silhouette Score |
+| DBSCAN | Noise Detection, Cluster Shapes |
+| Hierarchical Clustering | Dendrogram Analysis |
+
+---
+
+## 🛠️ Requirements
+
+### Python Libraries
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
-pip install xgboost imbalanced-learn
-pip install tensorflow  # or pytorch for neural networks
+pip install xgboost imbalanced-learn tensorflow
 ```
 
-### Running the Notebooks
-1. Clone the repository:
+### Menjalankan Notebook
+1. Clone repository:
    ```bash
-   git clone https://github.com/[your-username]/Midterm-Machine-Learning-2025.git
+   git clone https://github.com/mrafiasyifaa/Midterm-Machine-Learning-2025.git
    cd Midterm-Machine-Learning-2025
    ```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Launch Jupyter Notebook:
+2. Buka Jupyter Notebook:
    ```bash
    jupyter notebook
    ```
 
-4. Open and run notebooks in order:
-   - Start with `midterm_transaction_data.ipynb` for classification
-   - Then `midterm_regresi.ipynb` for regression
-   - Finally `midterm_clustering.ipynb` for clustering
+3. Jalankan notebook sesuai urutan:
+   - `midterm_transaction_data.ipynb` - Classification
+   - `midterm_regresi.ipynb` - Regression
+   - `midterm_clustering.ipynb` - Clustering
 
 ---
 
-## 📈 Key Results Summary
+## 📈 Metodologi
 
-### Classification Performance
-- **Best Model**: [Model Name]
-- **ROC-AUC Score**: [Score]
-- **F1-Score**: [Score]
-- **Recall**: [Score] (Important for fraud detection)
-
-### Regression Performance
-- **Best Model**: [Model Name]
-- **R² Score**: [Score]
-- **RMSE**: [Value]
-
-### Clustering Insights
-- **Optimal Clusters**: [Number]
-- **Silhouette Score**: [Score]
-- **Key Segments**: [Brief description]
-
----
-
-## 🔍 Methodology
-
-### 1. Data Preprocessing
-- Missing value imputation
-- Feature engineering
-- Outlier detection and handling
-- Feature scaling (StandardScaler/MinMaxScaler)
-- Handling imbalanced data (SMOTE for fraud detection)
-
-### 2. Exploratory Data Analysis (EDA)
-- Distribution analysis
-- Correlation analysis
-- Feature relationships
-- Target variable analysis
-
-### 3. Model Training
-- Train-test split (80-20)
-- Cross-validation (5-fold)
-- Hyperparameter tuning (GridSearchCV/RandomizedSearchCV)
-- Model comparison
-
-### 4. Evaluation & Validation
-- Multiple metrics evaluation
-- Confusion matrix analysis
-- Learning curves
-- Feature importance analysis
+### Pipeline ML yang Digunakan:
+1. **Data Loading & Exploration**
+2. **Data Preprocessing**
+   - Handling missing values
+   - Feature engineering
+   - Outlier detection
+   - Feature scaling/normalization
+3. **Exploratory Data Analysis (EDA)**
+   - Visualization
+   - Correlation analysis
+   - Distribution analysis
+4. **Model Training**
+   - Multiple algorithms
+   - Train-test split
+   - Cross-validation
+5. **Model Evaluation**
+   - Metrics comparison
+   - Confusion matrix (classification)
+   - Residual plots (regression)
+   - Cluster visualization (clustering)
+6. **Model Comparison & Selection**
 
 ---
 
-## 📚 Learning Outcomes
-
-Through this project, the following skills were developed:
-- ✅ End-to-end ML pipeline development
-- ✅ Data preprocessing and feature engineering
-- ✅ Model selection and comparison
-- ✅ Handling imbalanced datasets
-- ✅ Hyperparameter tuning
-- ✅ Model evaluation using multiple metrics
-- ✅ Visualization and interpretation of results
-- ✅ Documentation and code organization
-
----
-
-## 🔗 Navigation Guide
-
-| Notebook | Purpose | What You'll Find |
-|----------|---------|------------------|
-| `midterm_transaction_data.ipynb` | **Classification** | Fraud detection using Logistic Regression, Random Forest, XGBoost, and Neural Networks |
-| `midterm_regresi.ipynb` | **Regression** | Transaction amount prediction using Linear, Ridge, Lasso, Random Forest, and Gradient Boosting |
-| `midterm_clustering.ipynb` | **Clustering** | Customer segmentation using K-Means, DBSCAN, and Hierarchical Clustering |
-
-**Recommended Order**: Classification → Regression → Clustering
-
----
-
-## 📝 Notes
-- All notebooks contain detailed explanations and comments
-- Code follows PEP 8 style guidelines
-- Visualizations included for better understanding
-- Models are compared using appropriate metrics
-- Results are reproducible (random seeds set)
+## 📝 Catatan
+- Setiap notebook dilengkapi dengan penjelasan detail dan komentar
+- Visualisasi disertakan untuk pemahaman yang lebih baik
+- Model dibandingkan menggunakan metrics yang sesuai
+- Hasil dapat direproduksi (random seed telah di-set)
 
 ---
 
 ## 🤝 Acknowledgments
 - **Course**: Machine Learning and Deep Learning
-- **Assignment**: Midterm - Individual Task
-- **Deadline**: December 6, 2025
-- **Instructor**: [Instructor Name]
+- **Assignment**: UTS (Midterm) - Individual Task
+- **Deadline**: 6 Desember 2025
 
 ---
 
-## 📄 License
-This project is created for educational purposes as part of the Machine Learning course midterm examination.
-
----
-
-**Last Updated**: December 4, 2025
+**Last Updated**: 5 Desember 2025
